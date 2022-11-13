@@ -1,0 +1,43 @@
+nav{
+  font-family: 'Bungee', cursive;
+  height: 120px;
+  
+  
+  background-color: #4056a1;
+  color: #FFFFFF;
+  padding-left: 1.5em;  
+  padding-right: 1.5em;
+  
+}
+.first-list{
+  padding-top: 50px;
+  font-size: xx-large;
+ 
+}
+nav ul{
+  list-style: none; /* Remove bullets from the list. */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 0;
+  
+ }
+ 
+ .second-list{
+  flex-direction: column;
+  font-family: 'Source Sans Pro';
+  font-size: x-large;
+  
+ 
+  
+  
+ }
+
+
+.fa-angle-double-down{
+  color: red;
+  padding-left: 75px;
+ 
+}
