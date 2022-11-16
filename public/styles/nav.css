@@ -1,12 +1,14 @@
 nav{
   font-family: 'Bungee', cursive;
   height: 120px;
-  
-  
   background-color: #4056a1;
   color: #FFFFFF;
   padding-left: 1.5em;  
   padding-right: 1.5em;
+  position: fixed;
+  width: 100%;
+  
+ 
   
 }
 .first-list{
@@ -26,9 +28,15 @@ nav ul{
  }
  
  .second-list{
+  display: flex;
   flex-direction: column;
+  align-items: center;
   font-family: 'Source Sans Pro';
-  font-size: x-large;
+  font-size: large;
+  justify-content: center;
+  align-items: center;
+  min-width: none;
+
   
  
   
@@ -38,6 +46,6 @@ nav ul{
 
 .fa-angle-double-down{
   color: red;
-  padding-left: 75px;
+  /*padding-left: 75px;*/
  
 }

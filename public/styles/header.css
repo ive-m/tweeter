@@ -1,0 +1,29 @@
+
+ .background-img{
+  background-color: #ed9600;
+  background-image: url("/images/asfalt-light.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  height: 520px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  
+ }
+ #img{
+  margin-top: 140px;
+ }
+
+ header div h2{
+  margin-top: 0;
+ }
+
+
+
+
+
+
+
