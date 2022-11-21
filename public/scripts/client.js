@@ -4,11 +4,52 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+
 $(document).ready(function() {
   console.log("Ready");
  renderTweets(data);
 
+  //const myForm = document.querySelector('form');
+  //myForm.addEventListener('submit', function(event) {
+  //event.preventDefault();
+
+ // console.log('Attempted form submission!');
+ // const tweetText= document.getElementById("tweet-text").value;
+  //console.log(tweetText);
+
+  const form = $("#tweets-forms");
+// Attach a submit handler to the form
+form.submit(function( event ) {
+ 
+  // Stop form from submitting normally
+  event.preventDefault();
+ 
+  // Get some values from elements on the page:
+ 
+    
+    $.ajax({
+      type : form.attr('method'),
+      url :  form.attr('action'),
+      data : form.serialize(),
+      success: function (data) {
+        console.log("DATA", data)
+        },
+        error: error => {
+          console.error(`Error Encountered: ${error.status} - ${error.statusText}`);
+      }
+    });
+
+  
 });
+
+ 
+});
+
+
+
+
+
+
 
 const data = [
   {
@@ -67,7 +108,7 @@ const createTweetElement = function(tweetObject) {
 
 
 return $tweet;
-}
+};
 
 const renderTweets = function(tweetsArray) {
   for (const elements of tweetsArray) {
@@ -75,7 +116,7 @@ const renderTweets = function(tweetsArray) {
     $('#tweets-container').append($tweet);
   }
 
-}
+};
 
 
 
