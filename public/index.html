@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
 
   <!-- Font Awsome-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
@@ -39,32 +40,24 @@
 <body>
   <!-- Top nav bar (fixed) -->
   <nav>
-
-
-    <ul class="first-list">
+    <ul id="tweet-word">
       <li><span>tweeter</span></li>
       <li>
-        <ul class="second-list">
+        <ul id="write-new-tweet">
           <li>
             <span> <strong>Write</strong> a new tweet</span>
           </li>
           <li><i class="fas fa-angle-double-down"></i>
-
         </ul>
-
-
-
     </ul>
-
   </nav>
+
   <header>
     <div class="background-img">
       <div>
         <img id="img" src="/images/profile-hex.png">
       </div>
-
       <br>
-
       <div>
         <h2>Your Name</h2>
       </div>
@@ -73,21 +66,53 @@
 
   <!-- Page-specific (main) content here -->
   <main class="container">
-    <section class="new-tweet">
+
+    <section>
       <h2>Compose Tweet</h2>
       <form action="/tweets" method="POST">
 
         <label for="tweet-text"><strong>What are you humming about?</strong> </label>
         <br>
-        <textarea maxlength="140" name="text" id="tweet-text"></textarea>
+        <textarea name="text" id="tweet-text"></textarea>
 
-        <div id="tweet-button-div">
+        <div id="tweet-button-counter">
           <button id="tweet-button" type="submit">Tweet</button>
-          <output id="counter" name="counter" class="counter" for="tweet-text"><strong>140</strong> </output>
+          <output id="counter" name="counter" for="tweet-text">140</output>
         </div>
 
       </form>
     </section>
+   
+    <section>  
+      <article class="tweet">
+
+      <header>
+        <div>
+          <img src="/images/profile-hex.png">
+          <span>Name</span>
+        </div>
+        <div id="user">@user</div>
+      </header>
+
+      <p>My first tweet -- My first tweet -- My first tweet -- My first tweet -- My first tweet -- My first tweet -- My first tweet -- My first tweet</p>
+
+      <footer>
+
+        <div id="date">
+          <strong>1h ago</strong>
+        </div>
+
+        <ul>
+          <li><i class="fa-solid fa-flag"></i></li>
+          <li><i class="fa-solid fa-arrows-retweet"></i></li>
+          <li><i class="fa-solid fa-heart"></i></li>
+        </ul>
+
+      </footer>
+
+    </article>
+  </section>
+  
   </main>
 
 </body>

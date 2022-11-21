@@ -7,18 +7,23 @@
 }
 #tweet-text{
   width: 100%;
+  background-color: #f4f1ec;
   box-sizing: border-box;
-  border-bottom-width: thick;
-   
-    border-bottom-color: rgb(24, 23, 23);
-    border-top: unset;
-    border-right: unset;
-    border-left: unset;
+  border-bottom-width: medium;
+  border-bottom-color: rgb(24, 23, 23);
+  border-top: unset;
+  border-right: unset;
+  border-left: unset;
+  resize: none;
 
 }
 
-#tweet-button-div{
+#tweet-button-counter{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+#counter{
+font-weight: bold;
 }
