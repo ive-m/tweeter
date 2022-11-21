@@ -67,7 +67,7 @@
   <!-- Page-specific (main) content here -->
   <main class="container">
 
-    <section>
+    <section class="new-tweet">
       <h2>Compose Tweet</h2>
       <form action="/tweets" method="POST">
 
@@ -83,7 +83,7 @@
       </form>
     </section>
    
-    <section>  
+    <section id="tweets-container">  
       <article class="tweet">
 
       <header>
@@ -91,22 +91,20 @@
           <img src="/images/profile-hex.png">
           <span>Name</span>
         </div>
-        <div id="user">@user</div>
+        <div id="user"><span>@user</span></div>
       </header>
 
       <p>My first tweet -- My first tweet -- My first tweet -- My first tweet -- My first tweet -- My first tweet -- My first tweet -- My first tweet</p>
 
       <footer>
 
-        <div id="date">
-          <strong>1h ago</strong>
-        </div>
-
-        <ul>
+        <div><span id="date">1h ago</span></div>
+        <div><ul>
           <li><i class="fa-solid fa-flag"></i></li>
           <li><i class="fa-solid fa-arrows-retweet"></i></li>
           <li><i class="fa-solid fa-heart"></i></li>
-        </ul>
+        </ul></div>
+        
 
       </footer>
 

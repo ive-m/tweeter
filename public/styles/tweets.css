@@ -34,10 +34,6 @@ article p {
 
 }
 
-#date {
-  margin-top: 10px;
-  margin-left: 12px;
-}
 
 .fa-solid:hover {
   color: #ed9600;
@@ -59,9 +55,14 @@ article p {
 
 #user {
   margin-right: 20px;
-  margin-top: 20px;
+  margin-top: 0px;
 }
 
+#date {
+  margin-top: 10px;
+  margin-left: 12px;
+  font-weight: bold;
+}
 
 footer {
   font-size: small;
