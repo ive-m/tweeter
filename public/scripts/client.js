@@ -1,41 +1,44 @@
 
-$(document).ready(function() {
+$(document).ready(function () {
   //console.log("Ready");
-   const form = $("#tweets-forms");
-  
+  const form = $("#tweets-forms");
+
   // Attach a submit handler to the form
-  form.submit(function( event ) {
-   // Stop form from submitting normally
+  form.submit(function (event) {
+    // Stop form from submitting normally
     event.preventDefault();
-    const text=$("#tweet-text").val();
-    if ( text=== ""||text===null ) {
+    const text = $("#tweet-text").val();
+    if (text === "" || text === null) {
       alert('Please enter your tweet');
     }
-    else{
-    $.ajax({
-      type : form.attr('method'),
-      url :  form.attr('action'),
-      data : form.serialize(),
-      success: ()=> {
-        if(text.length >140) {
-          alert('Please enter only 140 characteres');
-          
-        }else
-       loadTweets();
-      },
-      error: error => {
+    else {
+      $.ajax({
+        type: form.attr('method'),
+        url: form.attr('action'),
+        data: form.serialize(),
+        success: () => {
+          if (text.length > 140) {
+            alert('Please enter only 140 characteres');
+
+          } else
+            loadTweets();
+        },
+        error: error => {
           console.error(`Error Encountered: ${error.status} - ${error.statusText}`);
-      }
-    });
+        }
+      });
 
-  }
-  
-  
-});
+    }
 
-const createTweetElement = function(tweetObject) {
-  const $tweet = $(`<article class="tweet">
 
+  });
+  //$("<div>").text(textFromUser);
+
+  const createTweetElement = function (tweetObject) {
+    const textEnterByUser = tweetObject.content.text;
+
+
+    const $tweet = $(`<article class="tweet">
   <header>
     <div>
       <img src="${tweetObject.user.avatars}">
@@ -43,42 +46,45 @@ const createTweetElement = function(tweetObject) {
     </div>
     <div id="user"><span>${tweetObject.user.handle}</span></div>
   </header>
-
-  <p>${tweetObject.content.text}</p>
+  
+  <p>${escape(textEnterByUser)}</p>
 
   <footer>
-
     <div id="date"><datetime  class="timeago">${$.timeago(tweetObject.created_at)}</datetime></div>
     <div><ul>
       <li><i class="fa-solid fa-flag"></i></li>
       <li><i class="fa-solid fa-arrows-retweet"></i></li>
       <li><i class="fa-solid fa-heart"></i></li>
     </ul></div>
-    
-
   </footer>
 
 </article>`);
 
+    return $tweet;
+  };
 
-return $tweet;
-};
-const loadTweets= function(){
-  $.ajax('/tweets', { method: 'GET' })
-    .then(function (JSON) {
-      renderTweets(JSON)
-      
-    });
-}
-const renderTweets = function(tweetsArray) {
-  for (const elements of tweetsArray) {
-    const $tweet = createTweetElement(elements);
-    $('#tweets-container').prepend($tweet);
+
+  const loadTweets = function () {
+    $.ajax('/tweets', { method: 'GET' })
+      .then(function (JSON) {
+        renderTweets(JSON)
+
+      });
   }
+  const renderTweets = function (tweetsArray) {
+    for (const elements of tweetsArray) {
+      const $tweet = createTweetElement(elements);
+      $('#tweets-container').prepend($tweet);
+    }
 
-};
+  };
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 
- 
+
 });
 
 
