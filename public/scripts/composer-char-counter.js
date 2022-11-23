@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  
   console.log('READY');
   const textarea = document.querySelector("#tweet-text");
   textarea.addEventListener("input", function (event) {

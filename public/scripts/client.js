@@ -2,24 +2,34 @@
 $(document).ready(function() {
   //console.log("Ready");
    const form = $("#tweets-forms");
+  
   // Attach a submit handler to the form
   form.submit(function( event ) {
    // Stop form from submitting normally
     event.preventDefault();
-    
+    const text=$("#tweet-text").val();
+    if ( text=== ""||text===null ) {
+      alert('Please enter your tweet');
+    }
+    else{
     $.ajax({
       type : form.attr('method'),
       url :  form.attr('action'),
       data : form.serialize(),
-      success: (data,status,xhr)=> {
+      success: ()=> {
+        if(text.length >140) {
+          alert('Please enter only 140 characteres');
+          
+        }else
        loadTweets();
-        
-        },
-        error: error => {
+      },
+      error: error => {
           console.error(`Error Encountered: ${error.status} - ${error.statusText}`);
       }
     });
 
+  }
+  
   
 });
 
@@ -63,7 +73,7 @@ const loadTweets= function(){
 const renderTweets = function(tweetsArray) {
   for (const elements of tweetsArray) {
     const $tweet = createTweetElement(elements);
-    $('#tweets-container').append($tweet);
+    $('#tweets-container').prepend($tweet);
   }
 
 };
