@@ -81,3 +81,7 @@ footer ul {
   margin-right: 10px;
   justify-content: flex-end;
 }
+
+.red{
+  color: red;
+}

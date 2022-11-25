@@ -8,9 +8,23 @@ $(document).ready(function () {
     // Stop form from submitting normally
     event.preventDefault();
     const text = $("#tweet-text").val();
+    const error = document.getElementById("error")
+
     if (text === "" || text === null) {
-      alert('Please enter your tweet');
+      $( "#error" ).slideDown( "1000", function() {
+         if ((text === "" || text === null))
+        {
+            error.textContent = "Please enter your tweet"
+             document.querySelector("#tweet-text").addEventListener("input", function () {            
+              error.textContent= "";
+              $( "#error" ).slideUp();
+            });
+           
+        } 
+    });
+     
     }
+
     else {
       $.ajax({
         type: form.attr('method'),
@@ -18,9 +32,19 @@ $(document).ready(function () {
         data: form.serialize(),
         success: () => {
           if (text.length > 140) {
-            alert('Please enter only 140 characteres');
+            error.textContent = 'Please enter only 140 characteres';
+            $( "#error" ).slideDown();
+              document.querySelector("#tweet-text").addEventListener("input", function (event) {
+                const currentLength = event.target.value.length;
+                if (currentLength<=140) {
+                  error.textContent= "";
+                  $( "#error" ).slideUp();
+    } 
+  });
 
-          } else
+          } 
+          
+          else
             loadTweets();
         },
         error: error => {
@@ -28,7 +52,7 @@ $(document).ready(function () {
         }
       });
 
-    }
+   }
 
 
   });
@@ -62,12 +86,14 @@ $(document).ready(function () {
 
     return $tweet;
   };
-
+  
+  //function errorMessage() {
+//}
 
   const loadTweets = function () {
     $.ajax('/tweets', { method: 'GET' })
       .then(function (JSON) {
-        renderTweets(JSON)
+        renderTweets(JSON);
 
       });
   }

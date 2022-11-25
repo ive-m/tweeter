@@ -5,6 +5,11 @@
   border: 0ch;
 
 }
+#tweets-forms{
+  margin-top: 20px;
+}
+
+
 #tweet-text{
   width: 100%;
   background-color: #f4f1ec;
@@ -15,6 +20,7 @@
   border-right: unset;
   border-left: unset;
   resize: none;
+  
 
 }
 
@@ -26,4 +32,11 @@
 
 #counter{
 font-weight: bold;
+}
+
+#error{
+  display: none;
+  color: red;
+  border-style: solid;
+  border-color: red;
 }
