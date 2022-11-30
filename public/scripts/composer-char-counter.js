@@ -6,9 +6,15 @@ $(document).ready(function () {
     const maxLength = 140;
     const currentLength = event.target.value.length;
     $("#counter").text(maxLength - currentLength);
-    if (currentLength<0) {
-      $("#counter").className="red";
+
+    if ((maxLength - currentLength)<0) {
+       
+      $("#counter").css('color', 'red');
     }
-    console.log(`${maxLength - currentLength} chars left`);
+    else {
+      $("#counter").css('color', 'black');
+      
+    } 
+    //console.log(`${maxLength - currentLength} chars left`);
   });
 });
