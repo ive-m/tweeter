@@ -1,6 +1,7 @@
 
 $(document).ready(function () {
 
+  const error = document.getElementById("error")
   //console.log("Ready");
   const form = $("#tweets-forms");
 
@@ -8,22 +9,23 @@ $(document).ready(function () {
   form.submit(function (event) {
     // Stop form from submitting normally
     event.preventDefault();
-    const text = $("#tweet-text").val();
-    const error = document.getElementById("error")
 
-    if (text === "" || text === null) {
-      $("#error").slideDown("500", function () {
-        if ((text === "" || text === null)) {
-          error.textContent = "Please enter your tweet"
-          document.querySelector("#tweet-text").addEventListener("input", function () {
-            error.textContent = "";
 
-            $("#error").slideUp();
-          });
 
-        }
+    if ($("#tweet-text").val() === "" || $("#tweet-text").val() === null) {
+      $("#error").slideDown("50", function () {
+
+        error.textContent = "Please enter your tweet"
+
+
       });
 
+
+
+    }
+    else if ($("#tweet-text").val().length > 140) {
+      error.textContent = 'Please enter only 140 characteres';
+      $("#error").slideDown();
     }
 
     else {
@@ -32,38 +34,24 @@ $(document).ready(function () {
         url: form.attr('action'),
         data: form.serialize(),
         success: (res) => {
-          if (text.length > 140) {
-            error.textContent = 'Please enter only 140 characteres';
-            $("#error").slideDown();
-            document.querySelector("#tweet-text").addEventListener("input", function (event) {
-              let currentLength = event.target.value.length;
-              if (currentLength <= 140) {
-                error.textContent = "";
-                $("#error").slideUp();
-              }else{
-                error.textContent = 'Please enter only 140 characteres';
-            $("#error").slideDown();
-              }
-              
-            });
-
-          }
-
-          else {
-
             $.get("/tweets", function (data) {
 
-             console.log(data.tweets.length)
-             const lastTweet= createTweetElement(data.tweets.pop());
-              
-             $('#tweets-container').prepend(lastTweet);
-            });
+            //Add to the tweet container the last tweet
+            //const lastTweet= createTweetElement(data.tweets.pop());
+            //$('#tweets-container').prepend(lastTweet);
 
-            $("#tweet-text").val("");
-            $("#counter").css('color', 'black')
-            $("#counter").text(140);
+            //Add all the tweets again
+            let arr = [];
+            arr = data.tweets;
+            console.log('data.tweets', arr);
+            renderTweets(arr);
+          });
 
-          }
+          $("#tweet-text").val("");
+          $("#counter").css('color', 'black')
+          $("#counter").text(140);
+
+      
 
         },
         error: error => {
@@ -75,6 +63,25 @@ $(document).ready(function () {
 
 
   });
+
+
+  $("#tweet-text").on("keyup", function (event) {
+    let currentLength = event.target.value.length;
+    console.log('Current length', currentLength);
+
+    if ($("#tweet-text").length > 140) {
+      $("#error").textContent = 'Please enter only 140 characteres';
+      $("#error").slideDown();
+    }
+
+    else {
+      error.textContent = "";
+      $("#error").slideUp();
+    }
+
+  });
+
+
   //$("<div>").text(textFromUser);
 
   const createTweetElement = function (tweetObject) {
@@ -83,7 +90,7 @@ $(document).ready(function () {
 
     const $tweet = $(`<article class="tweet">
   <header>
-    <div>
+    <div id="avatar-name">
       <img src="${tweetObject.user.avatars}">
       <span>${tweetObject.user.name}</span>
     </div>
@@ -96,7 +103,7 @@ $(document).ready(function () {
     <div id="date"><datetime  class="timeago">${$.timeago(tweetObject.created_at)}</datetime></div>
     <div><ul>
       <li><i class="fa-solid fa-flag"></i></li>
-      <li><i class="fa-solid fa-arrows-retweet"></i></li>
+      <li><i class="fa-solid fa-retweet"></i></li>
       <li><i class="fa-solid fa-heart"></i></li>
     </ul></div>
   </footer>
@@ -117,15 +124,18 @@ $(document).ready(function () {
   }
 
 
-  //takes in an array of tweet objects and append each one to the #tweets-container
+  //takes in an array of tweet objects and add each one to the #tweets-container
   const renderTweets = function (tweetsArray) {
-    //console.log("Tweets Array", tweetsArray);
+
 
     for (const element of tweetsArray) {
+
       const $tweet = createTweetElement(element);
       $('#tweets-container').prepend($tweet);
     }
-    //$('#tweets-container').apend($tweet);
+
+
+
 
 
   };

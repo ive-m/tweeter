@@ -1,3 +1,9 @@
+@media screen and (min-width: 768px) {
+#tweets-container{
+  display: flex;
+  
+  flex-direction: column;
+}
 article {
   
   height: auto;
@@ -52,6 +58,8 @@ article p {
   flex-wrap: nowrap;
   justify-content: space-between;
   margin-bottom: 0px;
+  padding-top: 0;
+  justify-content: space-between;
 }
 
 .tweet img {
@@ -91,4 +99,4 @@ footer ul {
 
 .red{
   color: red;
-}
+}}
