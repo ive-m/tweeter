@@ -26,9 +26,15 @@ Tweets listed in order with newest at the top.
 ## Screenshots
 Tweeter App when the screen is larger than 728px
 ![](https://github.com/ive-m/tweeter/blob/master/docs/tweeter-fullscreen.png)
+
+
 Tweeter App when the screen is larger than 728px- scrolled down
 ![](https://github.com/ive-m/tweeter/blob/master/docs/tweeter-fullscreen-scroll%20down.png)
+
+
 Tweeter App when the screen is 728px or smaller
 ![](https://github.com/ive-m/tweeter/blob/master/docs/tweeter.png)
+
+
 Tweeter App when the screen is 728px or smaller- scrolled down
 ![](https://github.com/ive-m/tweeter/blob/master/docs/tweeter-scroll%20down.png)
