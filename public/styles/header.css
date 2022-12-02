@@ -29,7 +29,7 @@
   margin-top: 60px;
 }
 
-#header-tweets {
+#body-tweets {
   display: flex;
 }
 
@@ -59,7 +59,7 @@ header div h2 {
   }
 
 
-  #header-tweets {
+  #body-tweets {
     display: flex;
     width: 100%;
     flex-direction: column;

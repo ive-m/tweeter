@@ -1,5 +1,4 @@
 nav {
-  font-family: 'Bungee', cursive;
   height: 120px;
   background-color: #4056a1;
   color: #FFFFFF;
@@ -15,8 +14,7 @@ nav {
 
 
 nav ul {
-  list-style: none;
-  /* Remove bullets from the list. */
+  list-style: none;/* Remove bullets from the list. */
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -64,7 +62,7 @@ nav ul {
   }
 
   #write-new-tweet {
-    margin-right: 50px;
+    margin-right: 25px;
   }
 
 
