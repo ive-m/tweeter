@@ -24,7 +24,7 @@ Tweets listed in order with newest at the top.
 - Chance
 
 ## Screenshots
-Tweeter App when the screen is larger than 728px
+#Tweeter App when the screen is larger than 728px
 ![](https://github.com/ive-m/tweeter/blob/master/docs/tweeter-fullscreen.png)
 
 
