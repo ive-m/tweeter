@@ -34,14 +34,14 @@ $(document).ready(function () {
           $.get("/tweets", function (data) {
 
             //Add to the tweet container the last tweet
-            //const lastTweet= createTweetElement(data.tweets.pop());
-            //$('#tweets-container').prepend(lastTweet);
+            const lastTweet= createTweetElement(data.tweets.pop());
+            $('#tweets-container').prepend(lastTweet);
 
-            //Add all the tweets again
-            let arr = [];
-            arr = data.tweets;
-            console.log('data.tweets', arr);
-            renderTweets(arr);
+            //Tried to use render as instructed in compass but wot show from newest to latest
+            //let arr = [];
+            //arr = data.tweets;
+            //console.log('data.tweets', arr);
+            //renderTweets(arr);
           });
           //empty the tweet text area and set the counter back to 140 
           $("#tweet-text").val("");
@@ -77,7 +77,7 @@ $(document).ready(function () {
   });
 
 
-
+//creates and returns a new tweet element
   const createTweetElement = function (tweetObject) {
         const $tweet = $(`<article class="tweet">
   <header>
@@ -105,7 +105,7 @@ $(document).ready(function () {
   };
 
 
-
+//loads all tweets getting them from the server
   const loadTweets = function () {
     $.get("/tweets", function (data) {
 
@@ -123,15 +123,14 @@ $(document).ready(function () {
     }
 
 
-
-
-
   };
+  //avoid malicious texts
   const escape = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
+
   loadTweets();
 
 });
