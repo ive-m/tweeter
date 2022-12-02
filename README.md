@@ -20,7 +20,7 @@ Students build upon a repository to practice HTML, CSS, JS, jQuery and AJAX fron
 - Chance
 
 ## Screenshots
-![]()
-![]()
-![]()
-![]()
+![](https://github.com/ive-m/tweeter/blob/master/docs/tweeter-fullscreen.png)
+![](https://github.com/ive-m/tweeter/blob/master/docs/tweeter-fullscreen-scroll%20down.png)
+![](https://github.com/ive-m/tweeter/blob/master/docs/tweeter.png)
+![](https://github.com/ive-m/tweeter/blob/master/docs/tweeter-scroll%20down.png)
