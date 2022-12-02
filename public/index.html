@@ -30,10 +30,10 @@
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-<!-- Timeago -->
-<script src= "https://cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.4.3/jquery.timeago.js "></script>
+  <!-- Timeago -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.4.3/jquery.timeago.js "></script>
 
-  
+
 
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
@@ -57,44 +57,45 @@
     </ul>
   </nav>
   <div id="header-tweets">
-     <header class="header-imag">
-    <div class="background-img">
-      <div>
-        <img id="img" src="/images/profile-hex.png">
-      </div>
-      <br>
-      <div>
-        <h2>Maria</h2>
-      </div>
-    </div>
-  </header>
-
-  <!-- Page-specific (main) content here -->
-  <main class="container">
-
-    <section class="new-tweet">
-      <div id="error"></div>
-      <form id="tweets-forms" action="/tweets" method="POST">
-
-        <label for="tweet-text"><strong>What are you humming about?</strong> </label>
-        <br>
-        <textarea name="text" id="tweet-text"></textarea>
-
-        <div id="tweet-button-counter">
-          <button id="tweet-button" type="submit">Tweet</button>
-          <output id="counter" name="counter" for="tweet-text">140</output>
+    <header class="header-imag">
+      <div class="background-img">
+        <div>
+          <img id="img" src="/images/profile-hex.png">
         </div>
+        <br>
+        <div>
+          <h2>Maria</h2>
+        </div>
+      </div>
+    </header>
 
-      </form>
-    </section>
-   
-    <section id="tweets-container">  
-     
-  </section>
-  
-  </main></div>
+    <!-- Page-specific (main) content here -->
+    <main class="container">
 
- 
+      <section class="new-tweet">
+        <div id="error"></div>
+        <form id="tweets-forms" action="/tweets" method="POST">
+
+          <label for="tweet-text"><strong>What are you humming about?</strong> </label>
+          <br>
+          <textarea name="text" id="tweet-text"></textarea>
+
+          <div id="tweet-button-counter">
+            <button id="tweet-button" type="submit">Tweet</button>
+            <output id="counter" name="counter" for="tweet-text">140</output>
+          </div>
+
+        </form>
+      </section>
+
+      <section id="tweets-container">
+
+      </section>
+
+    </main>
+  </div>
+
+
 
 </body>
 

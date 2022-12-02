@@ -1,17 +1,17 @@
-
-#tweets-container{
+#tweets-container {
   display: flex;
   flex-direction: column;
 }
+
 article {
-  
+
   height: auto;
-  
+
   border-style: solid;
   margin-top: 50px;
   margin-bottom: 50px;
   border-color: rgb(24, 23, 23);
-  
+
 }
 
 article span {
@@ -20,13 +20,14 @@ article span {
   margin-left: 10px;
 }
 
-#paragraph-section{
+#paragraph-section {
   display: flex;
   word-wrap: break-word;
 }
+
 article p {
   font-weight: bold;
-  
+
   width: 98%;
   margin: auto;
   margin-top: 35px;
@@ -41,7 +42,8 @@ article p {
 
 }
 
-.tweet:hover {/*class for hover*/
+.tweet:hover {
+  /*class for hover*/
   box-shadow: 7px 7px gray;
 
 }
@@ -66,6 +68,7 @@ article p {
   margin-left: 15px;
   margin-top: 15px;
 }
+
 #avatar-name {
   display: flex;
 }
@@ -99,9 +102,8 @@ footer ul {
   justify-content: flex-end;
 }
 
-.red{
+.red {
   color: red;
 }
-@media screen and (max-width: 768px) {
- 
-}
+
+@media screen and (max-width: 768px) {}

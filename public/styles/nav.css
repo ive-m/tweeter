@@ -1,38 +1,38 @@
-
-nav{
+nav {
   font-family: 'Bungee', cursive;
   height: 120px;
   background-color: #4056a1;
   color: #FFFFFF;
-  padding-left: 1.5em;  
+  padding-left: 1.5em;
   padding-right: 1.5em;
   position: fixed;
   width: 100%;
-  
- 
-  
+
+
+
 }
 
- 
 
-nav ul{
-  list-style: none; /* Remove bullets from the list. */
+
+nav ul {
+  list-style: none;
+  /* Remove bullets from the list. */
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
   gap: 8px;
   margin-top: 20px;
-  
- }
 
- #tweet-word{
+}
+
+#tweet-word {
   padding-top: 25px;
   font-size: xx-large;
   margin-top: 30px;
 }
- 
- #write-new-tweet{
+
+#write-new-tweet {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -43,23 +43,24 @@ nav ul{
   min-width: none;
   margin-top: 0px;
 
-   
-  
- }
 
 
-.fa-angle-double-down{
-  color: red;
-  
- 
 }
+
+
+.fa-angle-double-down {
+  color: red;
+
+
+}
+
 @media screen and (max-width: 768px) {
   nav {
     background-color: #ed9600;
     background-image: url("/images/asfalt-light.png");
     background-size: cover;
     background-position: center;
-  
+
   }
 
   #write-new-tweet {

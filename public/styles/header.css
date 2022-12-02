@@ -1,12 +1,11 @@
-
-  .header-imag{
+.header-imag {
   width: 30%;
   padding-top: 200px;
   padding-left: 45px;
   display: flex;
 }
 
- .background-img{
+.background-img {
   background-color: #ed9600;
   background-image: url("/images/asfalt-light.png");
   background-size: cover;
@@ -18,13 +17,14 @@
   align-items: center;
   /*width: 100%;*/
   text-align: center;
-  color:  #FFFFFF;
+  color: #FFFFFF;
   width: 300px;
   height: 300px;
   margin-left: 35px;
-  
- }
- #img{
+
+}
+
+#img {
   width: 200px;
   margin-top: 60px;
 }
@@ -32,29 +32,32 @@
 #header-tweets {
   display: flex;
 }
- header div h2{
-  margin-top: -25px;
- }
 
- @media screen and (max-width: 768px) {
-  .header-imag{
+header div h2 {
+  margin-top: -25px;
+}
+
+@media screen and (max-width: 768px) {
+  .header-imag {
     width: 100%;
     padding-top: 0;
-padding-left: 0;
+    padding-left: 0;
     display: flex;
-  
+
 
   }
+
   .background-img {
     width: 100%;
     margin-top: 120px;
     margin-left: 0;
   }
+
   #img {
     width: 200px;
 
   }
- 
+
 
   #header-tweets {
     display: flex;
@@ -62,11 +65,4 @@ padding-left: 0;
     flex-direction: column;
   }
 
- }
-
-
-
-
-
-
-
+}
