@@ -1,7 +1,6 @@
-@media screen and (min-width: 768px) {
+
 #tweets-container{
   display: flex;
-  
   flex-direction: column;
 }
 article {
@@ -55,7 +54,7 @@ article p {
 .tweet header {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  /*flex-wrap: nowrap;*/
   justify-content: space-between;
   margin-bottom: 0px;
   padding-top: 0;
@@ -66,6 +65,9 @@ article p {
   width: 80px;
   margin-left: 15px;
   margin-top: 15px;
+}
+#avatar-name {
+  display: flex;
 }
 
 #user {
@@ -99,4 +101,7 @@ footer ul {
 
 .red{
   color: red;
-}}
+}
+@media screen and (max-width: 768px) {
+ 
+}

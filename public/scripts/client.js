@@ -1,40 +1,37 @@
 
-$(document).ready(function () {
+$(document).ready(function() {
 
-  const error = document.getElementById("error")
-  //console.log("Ready");
+  const error = document.getElementById("error");
   const form = $("#tweets-forms");
 
   // Attach a submit handler to the form
-  form.submit(function (event) {
+  form.submit(function(event) {
     // Stop form from submitting normally
     event.preventDefault();
 
 
-
+//check if the text of the tweet is not empty
     if ($("#tweet-text").val() === "" || $("#tweet-text").val() === null) {
-      $("#error").slideDown("50", function () {
-
-        error.textContent = "Please enter your tweet"
-
+      $("#error").slideDown("50", function() {
+        error.textContent = "Please enter your tweet";
 
       });
 
+//check if the has more than 140 characters
 
-
-    }
-    else if ($("#tweet-text").val().length > 140) {
-      error.textContent = 'Please enter only 140 characteres';
+    } else if ($("#tweet-text").val().length > 140) {
+      error.textContent = 'Please enter a maximum of 140 characteres';
       $("#error").slideDown();
-    }
-
+    } 
+    
+    //POST request using ajax
     else {
       $.ajax({
         type: form.attr('method'),//POST
         url: form.attr('action'),
         data: form.serialize(),
-        success: (res) => {
-            $.get("/tweets", function (data) {
+        success: () => {
+          $.get("/tweets", function(data) {
 
             //Add to the tweet container the last tweet
             //const lastTweet= createTweetElement(data.tweets.pop());
@@ -46,14 +43,14 @@ $(document).ready(function () {
             console.log('data.tweets', arr);
             renderTweets(arr);
           });
-
+//empty the tweet text area and set the counter back to 140 
           $("#tweet-text").val("");
-          $("#counter").css('color', 'black')
+          $("#counter").css('color', 'black');
           $("#counter").text(140);
 
-      
 
-        },
+
+        },//error if it was a bad request
         error: error => {
           console.error(`Error Encountered: ${error.status} - ${error.statusText}`);
         }
@@ -64,27 +61,24 @@ $(document).ready(function () {
 
   });
 
-
-  $("#tweet-text").on("keyup", function (event) {
+// show the error if the text has more than 140 characters
+  $("#tweet-text").on("keyup", function(event) {
     let currentLength = event.target.value.length;
     console.log('Current length', currentLength);
 
-    if ($("#tweet-text").length > 140) {
-      $("#error").textContent = 'Please enter only 140 characteres';
+    if ($("#tweet-text").val().length > 140) {
+      error.textContent = 'Please enter a maximum of 140 characteres';
       $("#error").slideDown();
-    }
-
-    else {
-      error.textContent = "";
+    } else {
+      $("#error").textContent = "";
       $("#error").slideUp();
     }
 
   });
 
 
-  //$("<div>").text(textFromUser);
 
-  const createTweetElement = function (tweetObject) {
+  const createTweetElement = function(tweetObject) {
     // const textEnterByUser = tweetObject.content.text;
 
 
@@ -115,21 +109,18 @@ $(document).ready(function () {
 
 
 
-  const loadTweets = function () {
-    $.get("/tweets", function (data) {
+  const loadTweets = function() {
+    $.get("/tweets", function(data) {
 
       console.log("Load was performed.", data);
       renderTweets(data.tweets);
     });
-  }
+  };
 
 
   //takes in an array of tweet objects and add each one to the #tweets-container
-  const renderTweets = function (tweetsArray) {
-
-
+  const renderTweets = function(tweetsArray) {
     for (const element of tweetsArray) {
-
       const $tweet = createTweetElement(element);
       $('#tweets-container').prepend($tweet);
     }
@@ -139,7 +130,7 @@ $(document).ready(function () {
 
 
   };
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;

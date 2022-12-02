@@ -20,304 +20,42 @@ body {
   font-size: 24px;
 }
 
-
-/****************RESPONSIVE*********************/
-
-/* If screen is 768px OR greater, apply these styles: */
-@media screen and (min-width: 768px) {
-
-  
+nav {
+  font-family: 'Bungee', cursive;
+}
 
 
-  /*
-   * Global layout stuff
-   */
-  nav {
-    font-family: 'Bungee', cursive;
-  }
 
- 
-
-  .container {
-    display: flex;
-    margin: auto;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    min-width: 0;
-    width: 850px;
-    margin-top: 200px;
-    margin-left: 100px;
-    margin-right: 30px;
-
-  }
-
-  #avatar-name {
-    display: flex;
-  }
-
-  #header-tweets {
-    display: flex;
-  }
-
+.container {
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  min-width: 0;
+  width: 850px;
+  margin-top: 200px;
+  margin-left: 100px;
+  margin-right: 30px;
 
 }
 
 
-/* If screen is 767px OR smaller, apply these styles: */
-@media screen and (max-width: 767px) {
 
-  nav {
-    background-color: #ed9600;
-    background-image: url("/images/asfalt-light.png");
-    background-size: cover;
-    background-position: center;
-    font-family: 'Bungee', cursive;
-    height: 120px;
-    color: #FFFFFF;
-    padding-left: 1.5em;
-    padding-right: 1.5em;
-    position: fixed;
-    width: 100%;
-  }
 
+
+@media screen and (max-width: 768px) {
   .container {
     display: flex;
     flex-direction: column;
     width: 90%;
     justify-content: center;
     margin-left: 5%;
-
-  }
-
-  nav ul {
-    list-style: none;
-    /* Remove bullets from the list. */
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    gap: 8px;
     margin-top: 20px;
 
   }
 
-  #tweet-word {
-    padding-top: 25px;
-    font-size: xx-large;
-    margin-top: 30px;
-  }
-
-  #write-new-tweet {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: 'Source Sans Pro';
-    font-size: large;
-    justify-content: center;
-    align-items: center;
-    min-width: none;
-    margin-top: 0px;
-    margin-right: 50px;
 
 
-
-  }
-
-
-  .fa-angle-double-down {
-    color: red;
-
-
-  }
-
-  body {
-
-    font-family: 'Source Sans Pro', sans-serif;
-    color: #545149;
-    background-color: #f4f1ec;
-    font-size: 24px;
-  }
-
-  header {
-    width: 100%;
-    padding-top: 0;
-
-    display: flex;
-  }
-
-  .background-img {
-    background-color: #ed9600;
-    background-image: url("/images/asfalt-light.png");
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    height: 300px;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    text-align: center;
-    color: #FFFFFF;
-    margin-top: 120px;
-
-
-  }
-
-  #img {
-    width: 200px;
-
-  }
-
-  header div h2 {
-    margin-top: 0;
-  }
-
-  #tweet-button {
-    background-color: #4056a1;
-    font-family: 'Bungee', cursive;
-    color: #FFFFFF;
-    border: 0ch;
-
-  }
-
-  #tweets-forms {
-    margin-top: 20px;
-  }
-
-
-  #tweet-text {
-    width: 100%;
-    background-color: #f4f1ec;
-    box-sizing: border-box;
-    border-bottom-width: medium;
-    border-bottom-color: rgb(24, 23, 23);
-    border-top: unset;
-    border-right: unset;
-    border-left: unset;
-    resize: none;
-
-
-  }
-
-  #tweet-button-counter {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  #counter {
-    font-weight: bold;
-  }
-
-  #error {
-    display: none;
-    
-    color: red;
-    border-style: solid;
-    border-color: red;
-    
-  }
-
-  #tweets-container {
-    display: flex;
-    flex-direction: column;
-  }
-
-  article {
-
-    height: auto;
-    border-style: solid;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    border-color: rgb(24, 23, 23);
-
-  }
-
-  article span {
-    float: right;
-    margin-top: 38px;
-    margin-left: 10px;
-  }
-
-  #paragraph-section {
-    display: flex;
-    word-wrap: break-word;
-  }
-
-  article p {
-    font-weight: bold;
-    width: 98%;
-    margin: auto;
-    margin-top: 35px;
-    background-color: #f4f1ec;
-    box-sizing: border-box;
-    border-top: 0;
-    border-right: 0;
-    border-left: 0;
-    border-style: solid;
-    border-bottom-color: rgb(24, 23, 23);
-    border-bottom-width: medium;
-
-  }
-
-  .tweet:hover {
-    /*class for hover*/
-    box-shadow: 7px 7px gray;
-
-  }
-
-
-  .fa-solid:hover {
-    color: #ed9600;
-  }
-
-  .tweet header {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    margin-bottom: 0px;
-    padding-top: 0;
-    justify-content: space-between;
-  }
-
-  .tweet img {
-    width: 80px;
-    margin-left: 15px;
-    margin-top: 15px;
-  }
-
-  #user {
-    margin-right: 20px;
-    margin-top: 0px;
-  }
-
-  #date {
-    margin-top: 12px;
-    margin-left: 12px;
-    font-weight: bold;
-  }
-
-  footer {
-    font-size: small;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-  }
-
-  footer ul {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 10px;
-    margin-right: 10px;
-    justify-content: flex-end;
-  }
-
-  .red {
-    color: red;
-  }
 }
+

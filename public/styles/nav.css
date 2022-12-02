@@ -1,4 +1,4 @@
-@media screen and (min-width: 768px) {
+
 nav{
   font-family: 'Bungee', cursive;
   height: 120px;
@@ -52,4 +52,19 @@ nav ul{
   color: red;
   
  
-}}
+}
+@media screen and (max-width: 768px) {
+  nav {
+    background-color: #ed9600;
+    background-image: url("/images/asfalt-light.png");
+    background-size: cover;
+    background-position: center;
+  
+  }
+
+  #write-new-tweet {
+    margin-right: 50px;
+  }
+
+
+}

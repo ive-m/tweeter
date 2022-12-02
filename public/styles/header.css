@@ -1,5 +1,4 @@
 
-@media screen and (min-width: 768px) {
   .header-imag{
   width: 30%;
   padding-top: 200px;
@@ -30,10 +29,41 @@
   margin-top: 60px;
 }
 
+#header-tweets {
+  display: flex;
+}
  header div h2{
   margin-top: -25px;
  }
-}
+
+ @media screen and (max-width: 768px) {
+  .header-imag{
+    width: 100%;
+    padding-top: 0;
+padding-left: 0;
+    display: flex;
+  
+
+  }
+  .background-img {
+    width: 100%;
+    margin-top: 120px;
+    margin-left: 0;
+  }
+  #img {
+    width: 200px;
+
+  }
+ 
+
+  #header-tweets {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+
+ }
+
 
 
 
